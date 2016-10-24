@@ -1,0 +1,33 @@
+<div class='container'>
+  <h1>List of created tasks</h1>
+  <h3>Sort by:</h3>
+  <button ng-click="home.sortBy('date')">Date</button>
+  <button ng-click="home.sortBy('priority')">Priority</button>
+  <button ng-click="home.sortBy('user')">User</button>
+
+  <div ng-repeat="task in home.tasks | orderBy:home.propertyName">
+    <div>
+    <label>Subject:</label>{{task.subject}}
+    <label>Details:</label>{{task.details}}
+    <label>Priority:</label>{{task.priority}}
+    <label>User:</label>{{task.user}}
+    <label>Due date:</label>{{task.date}}
+    <button ng-click="home.deleteTask($index)">Delete task</button>
+    <button ng-click="home.archiveTask(task, $index)">Archive task</button>
+    </div>
+  </div>
+
+
+  <h1>List of Archived Task</h1>
+  <div ng-repeat="task in home.archivedTasks">
+    <div>
+    <label>Subject:</label>{{task.subject}}
+    <label>Details:</label>{{task.details}}
+    <label>Priority:</label>{{task.priority}}
+    <label>User:</label>{{task.user}}
+    <label>Due date:</label>{{task.date}}
+    <button ng-click="home.restoreTask(task, $index)">Restore task</button>
+    <button ng-click="home.deleteArchivedTask($index)">Delete task</button>
+    </div>
+  </div>
+</div>

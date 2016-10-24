@@ -1,0 +1,28 @@
+<div>
+  <div class='container'>
+    <form ng-submit="saveTask()" >
+    <div class='form-group'>
+      <label>Enter Subject</label>
+      <input type='text' class='form-control' ng-model='newTask.subject' />
+    </div>
+    <div class='form-group'>
+      <label>Enter Details</label>
+      <textarea class='form-control' ng-model='newTask.detail' ></textarea>
+    </div>
+    <div class='form-group'>
+      <label>Priority?</label>
+      <input type='text' class='form-control' ng-model='newTask.priority' />
+    </div>
+    <div class='form-group'>
+      <label>Enter User</label>
+      <input type='text' class='form-control' ng-model='newTask.user' />
+    </div>
+    <div class='form-group'>
+      <label>Enter Due Date</label>
+      <input type='date' class='form-control' ng-model='newTask.date' />
+      
+    </div>
+    <button type='sumbit' >Save task</button>
+  </form>
+    </div>
+    </div>
