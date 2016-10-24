@@ -1,6 +1,7 @@
 task.factory('taskModel', ['$rootScope', function($rootScope){
   var taskArr = [];
   var archivedTasks=[];
+  var completedTasks = [];
   var saveTask = function (task) {
     taskArr.push(task);
     console.log(taskArr);
@@ -28,6 +29,13 @@ task.factory('taskModel', ['$rootScope', function($rootScope){
   var deleteArchivedTask= function(index){
     archivedTasks.splice(index, 1);
   }
+  var completeTask = function(task, index){
+      completedTasks.push(task);
+      taskArr.splice(index, 1);
+  }
+  var getCompletedTask = function(){
+    return completedTasks;
+  }
 
   return{
     saveTask: saveTask,
@@ -35,7 +43,9 @@ task.factory('taskModel', ['$rootScope', function($rootScope){
     removeTask : removeTask,
     archiveTask: archiveTask,
     getArchivedTasks: getArchivedTasks,
-    restoreTask: restoreTask
-    deleteArchivedTask:deleteArchivedTask
+    restoreTask: restoreTask,
+    deleteArchivedTask:deleteArchivedTask,
+    completeTask : completeTask,
+    getCompletedTask: getCompletedTask
   }
 }])

@@ -14,6 +14,7 @@
     <label>Due date:</label>{{task.date}}
     <button ng-click="home.deleteTask($index)">Delete task</button>
     <button ng-click="home.archiveTask(task, $index)">Archive task</button>
+    <button ng-click="home.completeTask(task, $index)">Complete Task</button>
     </div>
   </div>
 
@@ -28,6 +29,17 @@
     <label>Due date:</label>{{task.date}}
     <button ng-click="home.restoreTask(task, $index)">Restore task</button>
     <button ng-click="home.deleteArchivedTask($index)">Delete task</button>
+    </div>
+  </div>
+
+  <h1>List of Completed Task</h1>
+  <div ng-repeat="task in home.completedTask">
+    <div>
+    <label>Subject:</label>{{task.subject}}
+    <label>Details:</label>{{task.details}}
+    <label>Priority:</label>{{task.priority}}
+    <label>User:</label>{{task.user}}
+    <label>Due date:</label>{{task.date}}
     </div>
   </div>
 </div>

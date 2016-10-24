@@ -3,6 +3,7 @@ task.controller('homeController', ['taskModel','$scope', function(taskModel, $sc
   var vm = this;
   vm.tasks = taskModel.getTasks();
   vm.archivedTasks = taskModel.getArchivedTasks();
+  vm.completedTask = taskModel.getCompletedTask();
   vm.deleteTask= function (index){
     taskModel.removeTask(index);
   }
@@ -17,5 +18,8 @@ task.controller('homeController', ['taskModel','$scope', function(taskModel, $sc
   };
   vm.deleteArchivedTask = function(index){
     taskModel.deleteArchivedTask(index);
+  };
+  vm.completeTask = function(task, index){
+    taskModel.completeTask(task, index);
   }
 }]);
