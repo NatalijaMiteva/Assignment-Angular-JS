@@ -6,7 +6,7 @@ task.controller('newTask.controller',['taskModel', '$scope', function(taskModel,
     var task={
       "subject" : vm.subject,
       "details" : vm.detail,
-      "priority" : vm.priority,
+      "priority" : vm.priority || "Low",
       "user" : vm.user,
       "date" : vm.date
     }

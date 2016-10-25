@@ -1,4 +1,4 @@
-task.factory('taskModel', ['$rootScope', function($rootScope){
+task.factory('taskModel', ['$rootScope', '$location', function($rootScope, $location){
   //list for all Tasks
   var taskArr = [];
   //list for archived Tasks
@@ -8,8 +8,7 @@ task.factory('taskModel', ['$rootScope', function($rootScope){
   //function for saving new Task
   var saveTask = function (task) {
     taskArr.push(task);
-    console.log(taskArr);
-    alert("Task is saved!")
+    $location.path('/home');
   };
   //get all Tasks
   var getTasks = function(){

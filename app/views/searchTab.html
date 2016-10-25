@@ -1,0 +1,12 @@
+<div class="container">
+  Search: <input type="text" placeholder="Search" ng-model="searchTask" /><br />
+  
+  <h4>List of tasks</h4>
+  <div ng-repeat="task in searchTab.tasks | filter:searchTask">
+    <label>Subject:</label>{{task.subject}}
+    <label>Details:</label>{{task.details}}
+    <label>Priority:</label>{{task.priority}}
+    <label>User:</label>{{task.user}}
+    <label>Due date:</label>{{task.date}}
+  </div>
+</div>

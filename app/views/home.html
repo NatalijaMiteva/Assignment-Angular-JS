@@ -5,7 +5,7 @@
     <button ng-click="home.sortBy('date')">Date</button>
     <button ng-click="home.sortBy('priority')">Priority</button>
     <button ng-click="home.sortBy('user')">User</button>
-
+    <h4 class='text-warning' ng-show="home.tasks.length===0">List is empty. Please add new task!</h4>
     <div ng-repeat="task in home.tasks | orderBy:home.propertyName">
       <div>
       <label>Subject:</label>{{task.subject}}
@@ -22,6 +22,7 @@
 
   <section>
     <h1>List of Archived Task</h1>
+    <h4 class='text-warning' ng-show="home.archivedTasks.length===0">List is empty. Please archive some task!</h4>
     <div ng-repeat="task in home.archivedTasks">
       <div>
       <label>Subject:</label>{{task.subject}}
@@ -37,6 +38,7 @@
 
   <section>
     <h1>List of Completed Task</h1>
+    <h4 class='text-warning' ng-show="home.completedTask.length===0">List is empty. Please complete some task!</h4>
     <div ng-repeat="task in home.completedTask">
       <div>
       <label>Subject:</label>{{task.subject}}

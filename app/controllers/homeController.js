@@ -30,5 +30,9 @@ task.controller('homeController', ['taskModel','$scope', function(taskModel, $sc
   //set task to completed Task list
   vm.completeTask = function(task, index){
     taskModel.completeTask(task, index);
-  }
+  };
+  //for setting active tab
+  function widgetsController($scope, $route) {
+    $scope.$route = $route;
+}
 }]);
