@@ -1,5 +1,5 @@
 'use strict';
-var task = angular.module('task', ['ngRoute', 'ngResource'])
+var task = angular.module('task', ['ngRoute', 'ngResource','angular.filter','ui.bootstrap.datetimepicker'])
     .config(function($routeProvider, $resourceProvider, $locationProvider) {
         $routeProvider.when('/home', {
             templateUrl: '/views/home.html',
